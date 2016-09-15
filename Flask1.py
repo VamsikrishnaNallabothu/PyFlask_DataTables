@@ -3,16 +3,9 @@ from flask.ext.script import Manager
 import os
 
 
-
 app = Flask(__name__)
-#The Flask uses this name argument to specify the rooth path of the application
 app.secret_key = os.urandom(26)
 
-'''
-Flask is nothing but a webserver that takes the requests from the browsers. So, inorder
-to know what to return on a request, it keeps a mapping of URLs to the python functions.
-Decorators are used to register the functions as handlers for an event,here the
-  function index() is rergistered as the handler for the application's root url'''
 
 @app.route('/')
 def index():
